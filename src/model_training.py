@@ -1,4 +1,3 @@
-import os
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -12,7 +11,10 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
-
+import os, sys
+# 把当前脚本所在目录的父目录加入 sys.path 并设为工作目录
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+os.chdir(ROOT_DIR)
 # 设置环境变量避免警告
 os.environ["LOKY_MAX_CPU_COUNT"] = "4"
 
@@ -22,7 +24,7 @@ if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
 # 读取处理后的数据
-df = pd.read_csv("../data/processed_music_data.csv")
+df = pd.read_csv("data/processed_music_data.csv")
 original_features = df.columns.tolist()
 
 # 1. 数据标准化
