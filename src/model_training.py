@@ -19,7 +19,7 @@ os.chdir(ROOT_DIR)
 os.environ["LOKY_MAX_CPU_COUNT"] = "4"
 
 # 创建保存目录
-save_dir = '../notebooks'
+save_dir = 'notebooks'
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
