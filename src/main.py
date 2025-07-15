@@ -12,7 +12,8 @@ scripts = [
     "src/data_preprocessing.py",
     "src/exploratory_analysis.py",
     "src/model_training.py",
-    "src/day2_lightgbm_xgboost.py"
+    "src/day2_lightgbm_xgboost.py",
+    "src/day2_supervised.py"
 ]
 
 for script in scripts:
