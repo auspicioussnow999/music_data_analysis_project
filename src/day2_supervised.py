@@ -60,7 +60,7 @@ cv = KFold(n_splits=5, shuffle=True, random_state=42)
 
 # ---------- 5. 单线程轻量网格 ----------
 lgbm = LGBMRegressor(
-    n_estimators=1500,
+    n_estimators=500,
     learning_rate=0.05,
     num_leaves=63,
     max_depth=8,
@@ -71,7 +71,7 @@ lgbm = LGBMRegressor(
     verbosity=-1          # 关闭 LightGBM 提示
 )
 xgb = XGBRegressor(
-    n_estimators=1500,
+    n_estimators=500,
     learning_rate=0.05,
     max_depth=8,
     subsample=0.8,
@@ -104,4 +104,4 @@ print("融合平均 MAE (原始):", ensemble_maes.mean().round(4))
 # ---------- 8. 保存 ----------
 ensemble.fit(X, y)
 joblib.dump(ensemble, f'{SAVE_DIR}/ensemble_final.pkl')
-print("✅ 全部完成！")
+print("全部完成！")

@@ -13,7 +13,8 @@ scripts = [
     "src/exploratory_analysis.py",
     "src/model_training.py",
     "src/day2_lightgbm_xgboost.py",
-    "src/day2_supervised.py"
+    "src/day2_supervised.py",
+    "src/day2_single_run_analysis.py"
 ]
 
 for script in scripts:
@@ -22,7 +23,7 @@ for script in scripts:
     try:
         subprocess.run([sys.executable, script], check=True)
     except subprocess.CalledProcessError as e:
-        print(f"❌ {script} 失败，错误码 {e.returncode}")
+        print(f"{script} 失败，错误码 {e.returncode}")
         sys.exit(1)
 
-print("\n🎉 全部脚本运行完成！")
+print("\n全部脚本运行完成！")
